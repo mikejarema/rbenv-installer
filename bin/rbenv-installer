@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd ~
+
 # Verify Git is installed:
 if [ ! $(which git) ]; then
   echo "Git is not installed, can't continue."

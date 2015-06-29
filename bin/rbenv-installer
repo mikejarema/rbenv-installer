@@ -8,6 +8,7 @@ fi
 
 if [ -z "${RBENV_ROOT}" ]; then
   RBENV_ROOT="$HOME/.rbenv"
+  echo "RBENV_ROOT=${RBENV_ROOT}"
 fi
 
 # Install rbenv:
@@ -41,6 +42,8 @@ for plugin in ${PLUGINS[@]} ; do
   VALUE=${plugin#*/}
 
   RBENV_PLUGIN_ROOT="${RBENV_ROOT}/plugins/$VALUE"
+  echo "RBENV_PLUGIN_ROOT=${RBENV_PLUGIN_ROOT}"
+  
   if [ ! -d "$RBENV_PLUGIN_ROOT" ] ; then
     git clone https://github.com/$KEY/$VALUE.git $RBENV_PLUGIN_ROOT
   else
